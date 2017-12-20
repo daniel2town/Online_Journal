@@ -1,0 +1,126 @@
+.modal-container .modal-body .modal-body-logout{
+	height:100px !important;
+	min-height:100px !important;
+}
+
+
+.filecontr{
+	width:158px;
+	height: auto;
+	display: block;
+	padding: auto;
+	float: left;
+	margin-left: 40px !important;
+	/*margin:0 auto;*/
+}
+
+.filestyle{
+	background:maroon;
+	margin-top:10px;
+	margin-left:0px;
+	float:left;
+	width: 150px;
+	max-width: 150px;
+	height: auto;
+	opacity:0.8;
+	padding-top:0px;
+	padding-left:0px;
+	padding-right:0px;
+	padding-bottom:10px;
+	/*border-radius: 1px;*/
+	box-shadow: 0px 1px 1px 0px;
+	transition: opacity 0.7s, box-shadow 0.5s;
+	display: block;
+}
+
+.filestyle:hover{
+	opacity: 1.0;
+	box-shadow: 1px 1px 10px 1px;
+	cursor:pointer;
+}
+
+
+.filelogo{
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 150px;
+	height: 180px;
+	display: block;
+	margin-bottom: 5px;
+}
+
+
+.filename{
+	font-size: 15px;
+	text-align: center;
+	color:#fafafa;
+	text-overflow: auto;
+	overflow: auto;
+}
+
+.fileopt{
+	font-size: 15px;
+	margin-top: 0px;
+	float:left;
+	width: 150px;
+	height: auto;
+	text-align: center;
+	padding:0px;
+}
+
+
+.panel span{
+	float:left;
+	width: 100%;
+}
+
+.panel form{
+	font-size: 15px;
+	overflow:auto;
+}
+
+.panel {
+	max-height: 350px;
+	overflow: auto;
+}
+
+.btn-dl{
+	margin-left: 2px;
+	margin-right: 2px;
+	text-align: center;
+	overflow: auto;
+}
+
+.btn-del{
+	overflow: auto;
+	margin-left: 4px;
+	margin-right: 2px;
+	text-align: center;
+}
+
+
+.container .content-section .text-center{
+	z-index: 1 !important;
+}
+
+.college-footer{
+	text-align: center;
+	color:maroon;
+	font-size: 17px;
+	text-shadow: #FFF 2px 2px 4px;
+}
+
+.modal-header-text{
+	color:maroon;
+	text-shadow: #FFF 2px 2px 4px;
+	
+}
+
+.footer-white{
+	background: #FFF !important;
+}
+
+#dlmodal{
+	margin-top:5px;
+	margin-bottom:2px;
+}

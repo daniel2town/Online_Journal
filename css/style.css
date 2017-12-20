@@ -1,0 +1,110 @@
+
+*, *:before, *:after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
+}
+
+input:-webkit-autofill .active {
+	color: white !important;
+}
+
+body {
+	color: white;
+	display: flex;
+	padding: 20px;
+	min-height: 100vh;
+	position: relative;
+	flex-direction: column;
+	justify-content: center;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	background: url("../img/background.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.box {
+	width: 100%;
+	margin-top: -18%;
+	margin-left: 69%;
+	padding: 10px;
+	max-width: 400px;
+	border-radius: 2px;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	background-color: rgba(0, 0, 0, 0.60);
+}
+
+h1 {
+	font-weight: 100;
+	letter-spacing: 1px;
+	margin: 10px 0 20px 10px;
+}
+
+.input-group {
+	font-size: 22px;
+	padding: 20px 10px;
+	padding-top: 40px;
+	position: relative;
+	border-radius: 2px;
+	margin-bottom: 10px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.input-group input {
+	width: 100%;
+	border: none;
+	outline: none;
+	display: block;
+	font-weight: 300;
+	letter-spacing: 1px;
+	background-color: transparent;
+	color: white;
+}
+
+.input-group input:focus + label, .input-group input.active + label {
+	top: 5px;
+	left: 5px;
+	font-size: 16px;
+}
+
+.input-group label {
+	top: 30px;
+	left: 10px;
+	opacity: 0.7;
+	font-weight: 100;
+	position: absolute;
+	letter-spacing: 2px;
+	pointer-events: none;
+	transition: all 0.2s ease-in;
+}
+
+input[type="submit"] {
+	border: none;
+	float: right;
+	outline: none;
+	padding: 10px;
+	font-weight: 300;
+	border-radius: 2px;
+	letter-spacing: 1px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	text-transform: uppercase;
+	background-color: rgba(255, 255, 255, 0.2);
+	transition: all 0.2s ease-in;
+	color: white;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover, input[type="submit"]:focus {
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}

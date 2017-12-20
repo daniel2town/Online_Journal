@@ -1,0 +1,26 @@
+/* BUTTONS CUSTOM */
+.download-btn{
+	transition: ease-out 0.5s;
+	display: none;
+	min-width: 100%;
+	border-radius: 5px;
+	margin-top: -50px;
+}
+
+.download-btn-after{
+	cursor:pointer;
+	border:1px solid #FFF;
+	margin-top:0px;
+	color:gold ;
+	background: maroon;
+	padding:10px;
+	overflow: hidden;
+	font-size: 10px;
+	opacity: 0.3;
+}
+
+.download-btn:hover{
+	/*margin-top:-3px;*/
+	opacity: 1;
+	font-size: 12px;
+}

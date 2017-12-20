@@ -1,0 +1,142 @@
+@media print
+{
+.noprint {display:none !important;}
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+/* Modal Starts Here */
+.modalDialog {
+        width: 100%;
+        position: fixed;
+        font-family: Arial, Helvetica, sans-serif;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0.8);
+        z-index: 99999;
+        opacity:0;
+        -webkit-transition: opacity 400ms ease-in;
+        -moz-transition: opacity 400ms ease-in;
+        transition: opacity 400ms ease-in;
+        pointer-events: none;
+    }
+
+.modalDialog #journalTitle{
+    font-size: 14px !important;
+    margin: 0 auto;
+    padding:5px 10px;
+}
+/*
+    .modalDialog:target {
+        opacity:1 !important;
+        pointer-events: auto !important;
+    }*/
+
+    .modalDialog > div {
+        width: 80%;
+        height: 55%;
+        position: relative;
+        margin: 5% auto;
+        padding: auto 20px;
+        border-radius: 10px;
+        background: #fff;
+        background: -moz-linear-gradient(#fff, #999);
+        background: -webkit-linear-gradient(#fff, #999);
+        background: -o-linear-gradient(#fff, #999);
+    }
+    
+@media only screen and (max-width:600px) {
+    .modalDialog > div {
+        width: 70%;
+        position: relative;
+        margin: 5% auto;
+        padding: auto 20px;
+        border-radius: 10px;
+        background: #fff;
+        background: -moz-linear-gradient(#fff, #999);
+        background: -webkit-linear-gradient(#fff, #999);
+        background: -o-linear-gradient(#fff, #999);
+    }
+
+}
+
+    .close {
+        background: #606061;
+        color: #FFFFFF;
+        line-height: 25px;
+        position: absolute;
+        right: -12px;
+        text-align: center;
+        top: -10px;
+        width: 24px;
+        text-decoration: none;
+        font-weight: bold;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        border-radius: 12px;
+        -moz-box-shadow: 1px 1px 3px #000;
+        -webkit-box-shadow: 1px 1px 3px #000;
+        box-shadow: 1px 1px 3px #000;
+    }
+
+    .close:hover { background: #00d9ff; }
+
+.menu{
+    /*display: none;*/
+    /*top:0;bottom: 0;left: 0;right:0;*/
+    /*position:relative;
+    display: block;
+    width:auto;
+    height:auto;
+    padding:10px;
+    /*border:1px solid white;*/
+   /* list-style-type: none;*/
+}
+
+.menu li{
+    position:relative;
+    float: left;
+    width: 100%;
+    padding:10px;
+    text-transform: uppercase;
+    z-index: 999;
+}
+
+.menu li:hover{
+    cursor: pointer;
+    background: rgba(160, 155, 155, 0.5);
+    z-index: 999;
+}
+
+
+#previewFrame{
+    position:relative;
+    width:100%;
+    height: 600px;
+    margin: auto;
+}
+
+.wm{
+    position:absolute;
+    display: block;
+    width: 98.5%;
+    height: 100%;
+    background: url('images/icwm.png');
+    opacity: 0.1;
+    background-attachment: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 3;
+}
