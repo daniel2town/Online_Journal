@@ -148,7 +148,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>About Online Journal</h2>
-                <p>Online Journal is am online site for the (USeP) University of Southeastern Philippines' collection of journal entries.</p>
+                <p>Online Journal is an online site for the (USeP) University of Southeastern Philippines' collection of journal entries.</p>
                 <p>These are provided by each of the seven colleges of the university for students to view or download to help aid their academic endeavors.</p>
             </div>
         </div>
@@ -365,7 +365,7 @@
    <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>Copyright &copy; Your Website 2016</p>
+            <p>Copyright &copy; USEP Online Journal 2017</p>
         </div>
     </footer>
 
@@ -374,7 +374,7 @@
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.js"></script>
-    <script src="jquery.min.js"></script>=
+    <script src="jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -438,6 +438,7 @@
 	<!-- Accordion -->
   <script src="js/circularnav.js"></script>
   <script src="js/functions.js"></script>
+
   
 </body>
 </html>

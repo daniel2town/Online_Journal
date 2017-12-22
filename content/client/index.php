@@ -1,6 +1,6 @@
 <?php 
 session_start();
-
+include 'sessionChecker/sessionChecker.php'; 
 if(!isset($_SESSION['user_type'])){
 	header("Location: ../../login.php");
 }
@@ -72,7 +72,7 @@ if(!isset($_SESSION['user_type'])){
         <li><a href="#">CONTACT</a></li>
         
         <div class="dropdown">
-			<li><a href="#" onclick="myFunction()" class="dropbtn">Hi, <?php echo $_SESSION['login_admin']; ?></a></li>
+			<li><a href="#" onclick="myFunction()" class="dropbtn">Hi, <?php echo $login_session; ?></a></li>
 				<div id="myDropdown" class="dropdown-content">
 				    <a href="../../logout.php">Logout</a>
 			  	</div>

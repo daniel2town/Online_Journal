@@ -30,8 +30,8 @@
   		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   		padding: 10px;
   		width: 300px;
-  		margin-top: 2%;
-  		margin-left: 73%;
+  		margin-top: 5%;
+  		margin-left: 40%;
 
   	}
 
