@@ -35,12 +35,23 @@ body {
 
 .box {
 	width: 100%;
-	margin-left: 36%;
+	margin-left: 34%;
 	padding: 10px;
 	max-width: 400px;
 	border-radius: 2px;
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 	background-color: rgba(0, 0, 0, 0.60);
+}
+@media screen and (max-width: 1920px) {
+    .box {
+		width: 100%;
+		margin-left: 36%;
+		padding: 10px;
+		max-width: 400px;
+		border-radius: 2px;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+		background-color: rgba(0, 0, 0, 0.60);
+	}
 }
 
 h1 {
