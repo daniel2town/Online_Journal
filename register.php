@@ -47,7 +47,7 @@
       }
 }
 
-@media screen and (max-width: 1920px) {
+@media screen and (max-width: 1366px) {
       .center-page {
         color: rgb(182, 182, 182);
         display: block !important;
