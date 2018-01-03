@@ -47,6 +47,19 @@
       }
 }
 
+@media screen and (max-width: 1920px) {
+      .center-page {
+        color: rgb(182, 182, 182);
+        display: block !important;
+        background-color: rgba(0, 0, 0, 0.60);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        padding: 10px;
+        width: 300px;
+        margin-top: 1%;
+        margin-left: 38%;
+      }
+}
+
   	.center-page input[type="text"], input[type="password"]{
   		margin-bottom: 5px;
   		width: 80%;

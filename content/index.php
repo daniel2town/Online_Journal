@@ -189,13 +189,13 @@
 
         <div class="add_account_div"><br>
          <div class="container">
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <select name="state" id="maxRows" class="form-control" style="width: 150px;">
                   <option value="5000">Show All</option>
                   <option value="10">10</option>
                   <option value="5">5</option>
                 </select>
-              </div>
+              </div> -->
               <h4>Pending Accounts</h4>
               <!-- <div class="form-group">
                 <select name="state" id="maxRows" class="form-control" style="width: 150px;">
@@ -257,6 +257,13 @@
             </div>
             <!--ALL ACCOUNTS -->
             <div class="container">
+            <div class="form-group">
+                <select name="state" id="maxRows" class="form-control" style="width: 150px;">
+                  <option value="5000">Show All</option>
+                  <option value="10">10</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
               <h4>Accounts</h4>
               <table id="mytable" class="table table-bordered table-striped">
                 <thead>
