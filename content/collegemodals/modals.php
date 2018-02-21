@@ -54,7 +54,7 @@
                 $tmpname = $name;
               }
 
-              echo "<div class='filecontr' id='".$dlcollege.$id."'><div class='filestyle'><div class='filename'><a onclick='viewModal(".$id.", ".$dlcollege.")' ><img class='' width='150px' height='214px' src='".$cover."'><div id='jour_title'><br>" .$tmpname. "</div></a></div></div>"."<div class='fileopt'><button id='dlmodal' onclick='calldlmodal(".$id.", ".$dlcollege." )' class='btn btn-success' style='width:130px;'>Details</button>";
+              echo "<div class='filecontr' id='".$dlcollege.$id."'><div class='filestyle'><div class='filename'><a onclick='viewModal(".$id.", ".$dlcollege.")' ><img class='' width='150px' height='214px' src='".$cover."'><div id='jour_title'><br>" .$tmpname. "</div></a></div></div>"."<div class='fileopt'><button id='dlmodal' onclick='calldlmodalAdmin(".$id.", ".$dlcollege." )' class='btn btn-success' style='width:130px;'>Details</button>";
 
               if($_SESSION['user_type'] == 'Superadmin' OR $_SESSION['user_type'] == 'Admin' AND $_SESSION['college'] == 'ic'){
                 echo "<button id='delbutton' onclick='calldelmodal(".$id.", ".$dlcollege.")' class='btn btn-danger' style='width:130px'>Delete</button>";
@@ -126,7 +126,7 @@
                 $tmpname = $name;
               }
 
-              echo "<div class='filecontr' id='".$dlcollege.$id."'><div class='filestyle'><div class='filename'><a onclick='viewModal(".$id.", ".$dlcollege.")' ><img class='' width='150px' height='214px' src='".$cover."'><div id='jour_title'><br>" .$tmpname. "</div></a></div></div>"."<div class='fileopt'><button id='dlmodal' onclick='calldlmodal(".$id.", ".$dlcollege." )' class='btn btn-success' style='width:130px;'>Details</button>";
+              echo "<div class='filecontr' id='".$dlcollege.$id."'><div class='filestyle'><div class='filename'><a onclick='viewModal(".$id.", ".$dlcollege.")' ><img class='' width='150px' height='214px' src='".$cover."'><div id='jour_title'><br>" .$tmpname. "</div></a></div></div>"."<div class='fileopt'><button id='dlmodal' onclick='calldlmodalAdmin(".$id.", ".$dlcollege." )' class='btn btn-success' style='width:130px;'>Details</button>";
 
               if($_SESSION['user_type'] == 'Superadmin' OR $_SESSION['user_type'] == 'Admin' AND $_SESSION['college'] == 'ce'){
                 echo "<button id='delbutton' onclick='calldelmodal(".$id.", ".$dlcollege.")' class='btn btn-danger' style='width:130px'>Delete</button>";
@@ -195,7 +195,7 @@
                 $tmpname = $name;
               }
 
-              echo "<div class='filecontr' id='".$dlcollege.$id."'><div class='filestyle'><div class='filename'><a onclick='viewModal(".$id.", ".$dlcollege.")' ><img class='' width='150px' height='214px' src='".$cover."'><div id='jour_title'><br>" .$tmpname. "</div></a></div></div>"."<div class='fileopt'><button id='dlmodal' onclick='calldlmodal(".$id.", ".$dlcollege." )' class='btn btn-success' style='width:130px;'>Details</button>";
+              echo "<div class='filecontr' id='".$dlcollege.$id."'><div class='filestyle'><div class='filename'><a onclick='viewModal(".$id.", ".$dlcollege.")' ><img class='' width='150px' height='214px' src='".$cover."'><div id='jour_title'><br>" .$tmpname. "</div></a></div></div>"."<div class='fileopt'><button id='dlmodal' onclick='calldlmodalAdmin(".$id.", ".$dlcollege." )' class='btn btn-success' style='width:130px;'>Details</button>";
 
               if($_SESSION['user_type'] == 'Superadmin' OR $_SESSION['user_type'] == 'Admin' AND $_SESSION['college'] == 'ced'){
                 echo "<button id='delbutton' onclick='calldelmodal(".$id.", ".$dlcollege.")' class='btn btn-danger' style='width:130px'>Delete</button>";
@@ -265,7 +265,7 @@
                 $tmpname = $name;
               }
 
-              echo "<div class='filecontr' id='".$dlcollege.$id."'><div class='filestyle'><div class='filename'><a onclick='viewModal(".$id.", ".$dlcollege.")' ><img class='' width='150px' height='214px' src='".$cover."'><div id='jour_title'><br>" .$tmpname. "</div></a></div></div>"."<div class='fileopt'><button id='dlmodal' onclick='calldlmodal(".$id.", ".$dlcollege." )' class='btn btn-success' style='width:130px;'>Details</button>";
+              echo "<div class='filecontr' id='".$dlcollege.$id."'><div class='filestyle'><div class='filename'><a onclick='viewModal(".$id.", ".$dlcollege.")' ><img class='' width='150px' height='214px' src='".$cover."'><div id='jour_title'><br>" .$tmpname. "</div></a></div></div>"."<div class='fileopt'><button id='dlmodal' onclick='calldlmodalAdmin(".$id.", ".$dlcollege." )' class='btn btn-success' style='width:130px;'>Details</button>";
 
               if($_SESSION['user_type'] == 'Superadmin' OR $_SESSION['user_type'] == 'Admin' AND $_SESSION['college'] == 'cgb'){
                 echo "<button id='delbutton' onclick='calldelmodal(".$id.", ".$dlcollege.")' class='btn btn-danger' style='width:130px'>Delete</button>";
@@ -335,7 +335,7 @@
                 $tmpname = $name;
               }
 
-              echo "<div class='filecontr' id='".$dlcollege.$id."'><div class='filestyle'><div class='filename'><a onclick='viewModal(".$id.", ".$dlcollege.")' ><img class='' width='150px' height='214px' src='".$cover."'><div id='jour_title'><br>" .$tmpname. "</div></a></div></div>"."<div class='fileopt'><button id='dlmodal' onclick='calldlmodal(".$id.", ".$dlcollege." )' class='btn btn-success' style='width:130px;'>Details</button>";
+              echo "<div class='filecontr' id='".$dlcollege.$id."'><div class='filestyle'><div class='filename'><a onclick='viewModal(".$id.", ".$dlcollege.")' ><img class='' width='150px' height='214px' src='".$cover."'><div id='jour_title'><br>" .$tmpname. "</div></a></div></div>"."<div class='fileopt'><button id='dlmodal' onclick='calldlmodalAdmin(".$id.", ".$dlcollege." )' class='btn btn-success' style='width:130px;'>Details</button>";
 
               if($_SESSION['user_type'] == 'Superadmin' OR $_SESSION['user_type'] == 'Admin' AND $_SESSION['college'] == 'ct'){
                 echo "<button id='delbutton' onclick='calldelmodal(".$id.", ".$dlcollege.")' class='btn btn-danger' style='width:130px'>Delete</button>";
@@ -405,7 +405,7 @@
                 $tmpname = $name;
               }
 
-              echo "<div class='filecontr' id='".$dlcollege.$id."'><div class='filestyle'><div class='filename'><a onclick='viewModal(".$id.", ".$dlcollege.")' ><img class='' width='150px' height='214px' src='".$cover."'><div id='jour_title'><br>" .$tmpname. "</div></a></div></div>"."<div class='fileopt'><button id='dlmodal' onclick='calldlmodal(".$id.", ".$dlcollege." )' class='btn btn-success' style='width:130px;'>Details</button>";
+              echo "<div class='filecontr' id='".$dlcollege.$id."'><div class='filestyle'><div class='filename'><a onclick='viewModal(".$id.", ".$dlcollege.")' ><img class='' width='150px' height='214px' src='".$cover."'><div id='jour_title'><br>" .$tmpname. "</div></a></div></div>"."<div class='fileopt'><button id='dlmodal' onclick='calldlmodalAdmin(".$id.", ".$dlcollege." )' class='btn btn-success' style='width:130px;'>Details</button>";
 
               if($_SESSION['user_type'] == 'Superadmin' OR $_SESSION['user_type'] == 'Admin' AND $_SESSION['college'] == 'cas'){
                 echo "<button id='delbutton' onclick='calldelmodal(".$id.", ".$dlcollege.")' class='btn btn-danger' style='width:130px'>Delete</button>";
@@ -475,7 +475,7 @@
                 $tmpname = $name;
               }
 
-              echo "<div class='filecontr' id='".$dlcollege.$id."'><div class='filestyle'><div class='filename'><a onclick='viewModal(".$id.", ".$dlcollege.")' ><img class='' width='150px' height='214px' src='".$cover."'><div id='jour_title'><br>" .$tmpname. "</div></a></div></div>"."<div class='fileopt'><button id='dlmodal' onclick='calldlmodal(".$id.", ".$dlcollege." )' class='btn btn-success' style='width:130px;'>Details</button>";
+              echo "<div class='filecontr' id='".$dlcollege.$id."'><div class='filestyle'><div class='filename'><a onclick='viewModal(".$id.", ".$dlcollege.")' ><img class='' width='150px' height='214px' src='".$cover."'><div id='jour_title'><br>" .$tmpname. "</div></a></div></div>"."<div class='fileopt'><button id='dlmodal' onclick='calldlmodalAdmin(".$id.", ".$dlcollege." )' class='btn btn-success' style='width:130px;'>Details</button>";
 
               if($_SESSION['user_type'] == 'Superadmin' OR $_SESSION['user_type'] == 'Admin' AND $_SESSION['college'] == 'cas'){
                 echo "<button id='delbutton' onclick='calldelmodal(".$id.", ".$dlcollege.")' class='btn btn-danger' style='width:130px'>Delete</button>";

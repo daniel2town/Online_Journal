@@ -1,0 +1,3 @@
+$_SESSION['login_admin'] = $result['username']; // Initializing Session
+$_SESSION['user_type'] = $result['account_type'];
+$_SESSION['college'] = $result['college'];				

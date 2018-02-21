@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2017 at 12:06 AM
--- Server version: 5.7.14
--- PHP Version: 5.6.25
+-- Generation Time: Jan 27, 2018 at 11:11 AM
+-- Server version: 10.1.29-MariaDB
+-- PHP Version: 7.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -33,18 +35,17 @@ CREATE TABLE `admin` (
   `middlename` varchar(50) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `account_type` varchar(50) NOT NULL,
-  `college` varchar(999) NOT NULL
+  `college` varchar(50) NOT NULL,
+  `account_type` varchar(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `firstname`, `lastname`, `middlename`, `username`, `password`, `account_type`, `college`) VALUES
-(1, 'Randy', 'Gamboa', 'S.', 'superadmin', 'superadmin', 'Superadmin', 'IC'),
-(4, 'Daniel', 'Duhaylungsod', 'Gumba', 'dancchi', '12345', 'User', 'user'),
-(10, 'sampleadmin', 'sampleadmin', 'sampleadmin', 'admin', 'admin', 'Admin', 'admin');
+INSERT INTO `admin` (`id`, `firstname`, `lastname`, `middlename`, `username`, `password`, `college`, `account_type`) VALUES
+(1, 'Randy', 'Gamboa', '', 'superadmin', 'superadmin', 'ic', 'Superadmin'),
+(2, 'user', 'user', 'user', 'user', 'user', 'ic', 'User');
 
 -- --------------------------------------------------------
 
@@ -91,13 +92,6 @@ CREATE TABLE `ced` (
   `date_upload` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `ced`
---
-
-INSERT INTO `ced` (`id`, `name`, `path`, `cover`, `views`, `date_upload`) VALUES
-(1, 'EDUC SAMPLE', 'journals/ced/844540602_New Doc 2017-12-13.pdf', 'journalcovers/ced/760358748_IMG_20171214_014235.jpg', 10, '2017-12-14');
-
 -- --------------------------------------------------------
 
 --
@@ -143,13 +137,6 @@ CREATE TABLE `ic` (
   `date_upload` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `ic`
---
-
-INSERT INTO `ic` (`id`, `name`, `path`, `cover`, `views`, `date_upload`) VALUES
-(1, 'IC SAMPLE', 'journals/ic/1901614161_IC JOURNAL 1.pdf', 'journalcovers/ic/621629582_layout-2(maroon).png', 32, '2017-12-14');
-
 -- --------------------------------------------------------
 
 --
@@ -166,13 +153,6 @@ CREATE TABLE `pendingacct` (
   `college` varchar(50) NOT NULL,
   `acct_status` varchar(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pendingacct`
---
-
-INSERT INTO `pendingacct` (`id`, `firstname`, `lastname`, `middlename`, `username`, `password`, `college`, `acct_status`) VALUES
-(8, 'sampleuser', 'sampleuser', 'sampleuser', 'user', 'user', 'ic', 'pending');
 
 -- --------------------------------------------------------
 
@@ -277,52 +257,63 @@ ALTER TABLE `saec`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `cas`
 --
 ALTER TABLE `cas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `ce`
 --
 ALTER TABLE `ce`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `ced`
 --
 ALTER TABLE `ced`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `cgb`
 --
 ALTER TABLE `cgb`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `ct`
 --
 ALTER TABLE `ct`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `ic`
 --
 ALTER TABLE `ic`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `pendingacct`
 --
 ALTER TABLE `pendingacct`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `requests`
 --
 ALTER TABLE `requests`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `saec`
 --
 ALTER TABLE `saec`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

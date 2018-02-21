@@ -32,9 +32,11 @@
 
         xhrReq.open("GET", "requests/getrequests.php", true);
         xhrReq.send();
-      }, 2000);
+      }, 1500);
 
     });
+
+    // ++++++++++++++++++++++++++++++++++++++++++++++
 
 
     // Show Requests Details
@@ -44,7 +46,7 @@
     }
 
 
-
+    // +++++++++++++++++++++++++++++++++++++++++++++++
 
 
     // Response to Requests
@@ -65,6 +67,8 @@
       // xmlhttp.setRequestHeader('Connection', 'close');
     }
 
+    // ++++++++++++++++++++++++++++++++++++++++++++++++
+
 
     // View Modal
     function viewModal(jid, refCollege){
@@ -79,154 +83,106 @@
     }
 
 
-    // Get Data for Details/ Download Journal nga Modal
-    function calldlmodal(jid, refCollege){ 
-
-        // Get the id's
-        var dl_id = jid;
-        var dl_col = refCollege;
-
-        // Get elements id's
-        var proceedBtn = document.getElementById("proceedBtn");
-        var termsChk = document.getElementById("agreeChk");
-        var dlStatus = document.getElementById("dlstatus");
-        var user = document.getElementById("req_user").value;
-        
-
-        // Re-initialize modal elements on modal load
-        proceedBtn.innerHTML = "Download";
-        termsChk.disabled = false;
-        termsChk.checked = false;
-        proceedBtn.disabled = true;
-
-        // call modal
-        $('#modal-dl').css('display', 'block');
-
-        if( document.getElementById('user_type').value == 'Superadmin' ||
-            document.getElementById('user_type').value == 'Admin'
-          ){
-
-          proceedBtn.disabled = false;
-          termsChk.checked = true;
-          termsChk.disabled = true;
-          
-            // var direct = new XMLHttpRequest();
-            
-            proceedBtn.addEventListener('click', function(){
-            //   direct.open("POST", "./download.php", true);
-            //   direct.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-              
-              // direct.onreadystatechange=function() {
-              //     if(direct.readyState==4 && direct.status==200){
-                  // Clear download status text
-                  // dlStatus.innerHTML = "";
-                  // // disable terms checkbox
-                  // termsChk.disabled = true;
-                  // // Disable button
-                  // proceedBtn.innerHTML = "Your file is downloading...";
-                  // proceedBtn.disabled = true;
-            //       }
-              
-            //     }
-            //     direct.send("directdl=true&college="+refCollege+"&id="+jid);
-
-              
-            // });
-
-            $.post("./download.php",
-            {
-              directdl: "true",
-              id: jid,
-              college: refCollege
-              
+    // +++++++++++++++++++++++++++++++++++++++++++++++
+    // This function checks if there is a request made from a file 
+    // Then checks if it the request is granted
+    function checkReqStatus(userName, fileID, collegeID,){
+        var tmp = null;
+        $.ajax({
+            'async': false,
+            'type': "POST",
+            'global': false,
+            'dataType': 'html',
+            'url': "./requests/checkRequestStatus.php",
+            'data': 
+            { 
+              'user': userName, 
+              'f_id': fileID, 
+              'col_id': collegeID 
             },
-            function(data, status){
-              if(status != "success"){
-                alert("Failed to submit data!");
-              }else{
-                // alert(data);
-                dlStatus.innerHTML = "";
-                // disable terms checkbox
-                termsChk.disabled = true;
-                // Disable button
-                proceedBtn.innerHTML = "Your file is downloading...";
-                proceedBtn.disabled = true;
-              }
-             
-            });
-            });
-
-            // if canceled
-            $('.w3-closebtn2').click(function(){
-              direct.abort();
-              // direct.setRequestHeader("Connection", "close");
-            });
-          return;
-        }
-
-        // Check if terms and agreement is checked.
-        // Toggle for proceed download button
-        termsChk.onchange = function(){
-          if(!termsChk.checked)
-            proceedBtn.disabled = true;
-          if(termsChk.checked)
-            proceedBtn.disabled = false;
-        }
-
-        // create xmlhttprequest
-        var xmlhttp= new XMLHttpRequest();
-        // What to do when the xhr state changes
-        xmlhttp.onreadystatechange=function() {
-          if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-            document.getElementById("details").innerHTML=xmlhttp.responseText;
-
-            var request = new XMLHttpRequest();
-            request.open("POST", "./download.php", true);
-            request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-            proceedBtn.addEventListener('click', function(){
-              // In a case where proceed button is enabled and terms is uncheck
-              if(!termsChk.checked){
-                dlStatus.innerHTML = "You have to agree to the terms and agreement to proceed!";
-                proceedBtn.disabled = true;
-              }else{
-                
-                request.onreadystatechange=function() {
-                  if(request.readyState==4 && request.status==200){
-                  // Clear download status text
-                  dlStatus.innerHTML = "";
-                  // disable terms checkbox
-                  termsChk.disabled = true;
-                  // Disable button
-                  proceedBtn.disabled = true;
-                  proceedBtn.innerHTML= "Your download request has been sent...";
-                  }
-                }
-                
-                request.send("college="+dl_col+"&id="+dl_id+"&user="+user+"&typ=request");
-               
-              }
-            });
-          }
-        }
-
-        // if canceled
-        $('.w3-closebtn2').click(function(){
-          xmlhttp.abort();
-          // xmlhttp.setRequestHeader("Connection", "close");
-          request.abort();
-          // request.setRequestHeader("Connection", "close");
+            'success': function (data) {
+                tmp = data;
+                // alert(tmp);
+            }
         });
-        
-        // Request for Journal Details and Download path
-        xmlhttp.open("GET","./requests/requestdldata.php?college="+dl_col+"&id="+dl_id,true);
-        xmlhttp.send();
+        return tmp;
+    } // End of Function
 
+    // +++++++++++++++++++++++++++++++++++++++++++++++
+
+    function calldlmodalAdmin(jid, refCollege){
+
+      //Get the id's
+      var downloadID = jid; //value for the file id to download
+      var downloadCollege = refCollege; //value for the id of the college where the file from
+
+      // Get elements id's
+      var proceedBtn = document.getElementById("proceedBtn");
+      var termsChk = document.getElementById("agreeChk");
+      var dlStatus = document.getElementById("dlstatus");
+      var user = document.getElementById("req_user").value;
+
+      // Initialize Get admin type and college
+      var userType = document.getElementById('user_type');
+      var userCollege = document.getElementById('user_college_index');
+
+      // Re-initialize modal elements on download modal onload()
+      termsChk.disabled = false;
+      termsChk.checked = false;
+      proceedBtn.disabled = true;
+
+      // Check the request status
+      var boolReq = checkReqStatus(user, downloadID, downloadCollege);
+
+      // IF the requestor is from diff College and req is accepted
+      if(userType.value == 'Superadmin' || userType.value == 'Admin' && user_college_index.value != downloadCollege && boolReq == "false"){ 
+        
+        proceedBtn.innerHTML = "Request Download";
+
+      }else{
+
+        proceedBtn.innerHTML = "Download";
+      
       }
 
-    // function callAlert(){
-    //   alert("Hello World!");
-    // }
+      // Display Modal
+      $('#modal-dl').css('display', 'block');
 
+
+      termsChk.addEventListener('change', function(){
+        if(termsChk.checked == 1){ proceedBtn.disabled = false; }
+        else{ proceedBtn.disabled = true; }
+      });
+
+      
+      // When the download/request button is clicked
+      proceedBtn.addEventListener('click', function(){
+
+        // disable terms checkbox
+        termsChk.disabled = true;
+
+        // This condition is to determine if the admin is not from the same college --> REQUEST File
+        // else --> DOWNLOAD File
+        if(userType.value == 'Superadmin' || userType.value == 'Admin' && user_college_index.value != downloadCollege  && boolReq == 'false'){
+          // Disable button
+          proceedBtn.innerHTML = "Your download has been requested.";
+          proceedBtn.disabled = true;
+          window.location.replace("./download.php?request=true&college="+downloadCollege+"&id="+downloadID+"&user="+user+"&typ=request");
+          return;
+        }else{
+          // Disable button
+          proceedBtn.innerHTML = "Your file is downloading...";
+          proceedBtn.disabled = true;
+          window.location.replace("./download.php?directdl=true&college="+downloadCollege+"&id="+downloadID);
+          return;
+        }
+        
+        
+        }); // End button click
+        
+    }
+
+    // ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     // Call Delete Modal
     function calldelmodal(delid, refCollege){

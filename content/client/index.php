@@ -66,10 +66,10 @@ if(!isset($_SESSION['user_type'])){
      <h1 id="logo"><a href="index.php"></a></h1>
     <div id="navigation">
       <ul>
-        <li><a class="active" href="#">HOME</a></li>
-        <li><a href="#">ABOUT</a></li>
+        <li><a class="active" href="index.php">HOME</a></li>
+        <li><a href="about.php">ABOUT</a></li>
         <!-- <li><a href="#">JOURNALS</a></li> -->
-        <li><a href="#">CONTACT</a></li>
+        <li><a href="contact.php">CONTACT</a></li>
         
         <div class="dropdown">
 			<li><a href="#" onclick="myFunction()" class="dropbtn">Hi, <?php echo $login_session; ?></a></li>
@@ -173,7 +173,7 @@ if(!isset($_SESSION['user_type'])){
 
 	          		$userr = $_SESSION['login_admin'];
 	          		$jidd = $row['id'];
-	          
+	          		// Check if there is a request accepted
 	          		$querry = mysqli_query($conn, "SELECT * FROM requests where req_user = '$userr' AND req_file_id = $jidd AND req_file_college = 'ic' AND req_status = 'accept'");
 	          		$result = mysqli_fetch_array($querry);
 	          		$rowCount = mysqli_num_rows($querry);

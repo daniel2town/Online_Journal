@@ -1,8 +1,8 @@
 <?php 
 session_start();
-
+include 'sessionChecker/sessionChecker.php'; 
 if(!isset($_SESSION['user_type'])){
-  header("Location: ../../login.php");
+	header("Location: ../../login.php");
 }
 
  ?>
@@ -15,8 +15,8 @@ if(!isset($_SESSION['user_type'])){
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
 <link rel="stylesheet" href="css/modal.css" type="text/css" />
 <link rel="stylesheet" href="css/buttons-style.css" />
-<link rel="stylesheet" href="css/buttons-style.css" />
-<!--[if IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
+
+
 <style>
 .dropbtn {
     padding: 16px;
@@ -49,34 +49,37 @@ if(!isset($_SESSION['user_type'])){
     display: block;
 }
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
-  color: #d01a20;
+	background-color: #f1f1f1;
+	color: #d01a20;
 }
 .show {display:block;}
 </style>
-
+<!--[if IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
 </head>
 <body>
+<h2 id="tops"></h2>
+
 <!-- START PAGE SOURCE -->
 <div id="shell">
   <div id="header">
-    <h1 id="useplogo"></h1>
-    <h1 id="logo"><a href="index.php"></a></h1>
-
+     <h1 id="useplogo"></h1>
+     <h1 id="logo"><a href="index.php"></a></h1>
     <div id="navigation">
       <ul>
         <li><a href="index.php">HOME</a></li>
         <li><a href="about.php">ABOUT</a></li>
         <!-- <li><a href="#">JOURNALS</a></li> -->
-        <li><a href="contact.php">CONTACT</a></li>
+        <li><a class="active" href="contact.php">CONTACT</a></li>
+        
         <div class="dropdown">
-          <li><a href="#" onclick="myFunction()" class="dropbtn">Hi, <?php echo $_SESSION['login_admin']; ?></a></li>
-            <div id="myDropdown" class="dropdown-content">
-                <a href="../../logout.php">Logout</a>
-            </div>
-        </div>
+			<li><a href="#" onclick="myFunction()" class="dropbtn">Hi, <?php echo $login_session; ?></a></li>
+				<div id="myDropdown" class="dropdown-content">
+				    <a href="../../logout.php">Logout</a>
+			  	</div>
+		</div>
       </ul>
     </div>
+
     <script>
     /* When the user clicks on the button, 
     toggle between hiding and showing the dropdown content */
@@ -99,57 +102,53 @@ if(!isset($_SESSION['user_type'])){
       }
     }
   </script>
-    <div id="sub-navigation">
+
+    <div id="sub-navigation" class="navbar-custom navbar-fixed-top">
       <div id="search">
-        <form accept-charset="utf-8">
+        <form action="search.php" method="GET" accept-charset="utf-8">
           <label for="search-field">SEARCH</label>
-          <input type="text" name="search_field" placeholder="Enter search here." id="search-field" class="blink search-field"  />
+          <input type="text" name="search_field" placeholder="Enter search here." value="" id="search-field" class="blink search-field"  />
           <input type="submit" name="searchsubmit" value="GO!" class="search-button" />
         </form>
       </div>
     </div>
   </div>
+  <br><br>
   <div id="main">
     <div id="content">
-
-<!-- ==================================== Body ================================================= -->
-
-<div class="box">
-        <div class="head">
-          <h2 id="ic-header">SEARCH RESULTS</h2>
-          <!-- <p class="text-right"><a href="#">See all</a></p> -->
+    <center>
+    	 <h1>Contact Us</h1>
+    	 <br><br>
+         <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                
+                        <a href="https://twitter.com/USePCampus" style="text-decoration: none; padding-right: 5px;"><span class="network-name">Twitter</span></a>
+                        <a href="https://plus.google.com/111997625235215045135" style="text-decoration: none; padding-left: 5px;"><span class="network-name">Google+</span></a>
+                    
+            </div>
         </div>
-<br>
-    <?php include 'queries/searchprocess.php'; ?>
-
-        <div class="cl">&nbsp;</div>
-</div>
-
-<div class="backToHome" style="text-align: center"><a href="index.php">Go Back to Home</a></div>
-
-
-<!-- =========================================================================================== -->
-
-     </div>
+    </section>
+         <br><br>
     </div>
+  </div>
   <div id="footer">
     <p class="lf">Copyright &copy; 2017 <a href="#">EyeSee</a> - All Rights Reserved</p>
+    <!-- <p class="rf">Created by <a href="#">Tan & DD</a></p> -->
     <div style="clear:both;"></div>
   </div>
 </div>
 
 <!-- ============================== Modal (Preview) ============================================ -->
 <div id="openModal" class="modalDialog">
-  <div>
-    <a title="Close" class="close">X</a>
-    <h2 id="journalTitle">Journal Title</h2>
-    <p id="text"></p>
-    <div class="wm"></div>
-    <iframe id="previewFrame" src="" frameborder="0" class="noprint" >
-      <!-- <img src="images/icwm.png" class="wm"> -->
-    </iframe>
-    
-  </div>
+	<div>
+		<a title="Close" class="close">X</a>
+		<h2 id="journalTitle">Journal Title</h2>
+		<p id="text"></p>
+		<div class="wm"></div>
+		<iframe id="previewFrame" src="" frameborder="0" class="noprint" ></iframe>	
+	</div>
 </div>
 
 
@@ -158,6 +157,8 @@ if(!isset($_SESSION['user_type'])){
 <!-- Scripts -->
 <!-- JQuery Library -->
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<!--<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script> Jquery Easing Plugin -->
+<script type="text/javascript" src="js/jquery.easing.min.js"></script>
 <!-- General Page Animations -->
 <script type="text/javascript" src="js/jquery-func.js"></script> 
 <!-- Modal Trigger and Functions -->

@@ -17,7 +17,7 @@
 		$new_acctype = mysqli_escape_string($conn, $_POST['create_accType']);
 
 
-		$acc_query = "INSERT INTO admin (firstname, lastname, middlename, username, password, account_type, college) VALUES ('$new_fname', '$new_lname', '$new_mname', '$new_username', '$new_password', '$new_acctype', '$new_college')";
+		$acc_query = "INSERT INTO admin (firstname, lastname, middlename, username, password, college, account_type) VALUES ('$new_fname', '$new_lname', '$new_mname', '$new_username', '$new_password', '$new_college', '$new_acctype')";
 
 
 		$exec_query = mysqli_query($conn, $acc_query);
@@ -25,7 +25,7 @@
 			mysqli_error($conn);
 		else
 			$exec_query = mysqli_query($conn, "DELETE FROM pendingacct WHERE username='$new_username' AND password='$new_password' AND firstname='$new_fname' AND lastname='$new_lname'");
-			echo "<script>alert('Account created!');</script>";
+			echo "<script>alert('Account approved!');</script>";
 			// echo '<META http-equiv="refresh" content="0;URL=index.php">';
 	
 
@@ -88,6 +88,7 @@
 		$new_mname = mysqli_escape_string($conn, $_POST['create_middlename']); 
 		$new_lname = mysqli_escape_string($conn, $_POST['create_lastname']);
 		$new_college = strtolower(mysqli_escape_string($conn, $_POST['create_college']));
+		$new_acctype = mysqli_escape_string($conn, $_POST['create_accType']);
 
 
 		$acc_query = "INSERT INTO pendingacct (firstname, lastname, middlename, username, password, college, acct_status) VALUES ('$new_fname', '$new_lname', '$new_mname', '$new_username', '$new_password', '$new_college', 'Deactivated/Pending')";
@@ -98,7 +99,7 @@
 			mysqli_error($conn);
 		else
 			$exec_query = mysqli_query($conn, "DELETE FROM admin WHERE username='$new_username' AND password='$new_password' AND firstname='$new_fname' AND lastname='$new_lname'");
-			echo "<script>alert('Account Deactivated');</script>";
+			echo "<script>alert('Account Deactivated!');</script>";
 			echo '<META http-equiv="refresh" content="0;URL=index.php">';
 	
 

@@ -176,6 +176,7 @@
 
 <input type="hidden" id="req_user" name="req_user" value="<?php echo $login_session; ?>">
 <input type="hidden" id="user_type" name="user_type" value="<?php echo $_SESSION['user_type']; ?>">
+<input type="hidden" id="user_college_index" name="user_college_index" value="<?php echo $_SESSION['college_index']; ?>">
 
 <!-- Modal Account -->
   <div id="manageaccount" class="w3-modal" >
@@ -292,7 +293,7 @@
                         <td><small><input type="hidden" name="create_lastname" value="<?php echo $rows['lastname']; ?>"><?php echo $rows['lastname']; ?></td>
                        <td><small><input type="hidden" name="create_middlename" value="<?php echo $rows['middlename'];?>"><?php echo $rows['middlename']; ?></td>
                        <td><small><input type="hidden" name="create_college" value="<?php echo $rows['college']; ?>" ><?php echo $rows['college']; ?></td>
-                       <td><small><input type="hidden" name="create_college" value="<?php echo $rows['account_type']; ?>" ><?php echo $rows['account_type']; ?></td>
+                       <td><small><input type="hidden" name="create_accType" value="<?php echo $rows['account_type']; ?>" ><?php echo $rows['account_type']; ?></td>
                        <!-- <td>
                        <select name="create_accType" required style="min-width: 20px;">
                             <!-- <option value="">Account Type</option> -->
@@ -357,9 +358,9 @@
                     <li>
                         <a href="https://twitter.com/USePCampus" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                     </li>
-                    <li>
+                   <!--  <li>
                         <a href="https://github.com/danieldee9/Online_Journal" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="https://plus.google.com/111997625235215045135" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
                     </li>
@@ -380,8 +381,9 @@
 
 
     <!-- jQuery -->
+    <!-- <script src="vendor/jquery.min.js"></script> -->
     <script src="vendor/jquery/jquery.js"></script>
-    <script src="jquery.min.js"></script>
+    
 
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>

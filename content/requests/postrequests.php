@@ -7,18 +7,23 @@ if($_SESSION['user_type'] == 'Superadmin' OR $_SESSION['user_type'] == 'Admin'){
 	$postrequests = mysqli_query($conn, "SELECT * FROM requests WHERE req_status='pending'");
 	$req_count=mysqli_num_rows($postrequests);
 
+
 	while($row = mysqli_fetch_array($postrequests)){
 		$req_id = $row['id'];
 		$req_type = $row['req_type'];
 		$req_user = $row['req_user'];
 		$req_file_id = $row['req_file_id'];
 		$req_file_col = $row['req_file_college'];
+		// $req_file_col = $_SESSION['college']
 		$req_status = $row['req_status'];
 		$req_posted = $row['req_posted'];
 
 		// Get Filenames
-		$file = mysqli_query($conn, "SELECT * from $req_file_col WHERE id='$req_file_id'");
+		$file = mysqli_query($conn, "SELECT * from $req_file_col WHERE id='$req_file_id' ");
 		$row2 = mysqli_fetch_array($file);
+		
+		if($req_file_col == $_SESSION['college'] && $_SESSION['user_type'] == 'Admin' || $_SESSION['user_type'] == 'Superadmin'){
+
 		echo
 		  "<a class='noti-item' id='noti$req_id' onclick='show_req($req_id)'>
 			Download Request <span id='reqclose' class='reqclosebtn'>x</span>
@@ -30,6 +35,9 @@ if($_SESSION['user_type'] == 'Superadmin' OR $_SESSION['user_type'] == 'Admin'){
 			<button class='btn btn-danger' value='decline' onclick='respondReq(this.value, ".$req_id.")'>Decline</button>
 			</div>
 		  </a>";
+
+		}
+		
 	}
 }
 

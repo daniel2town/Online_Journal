@@ -22,7 +22,7 @@
 		if(!$exec_query)
 			mysqli_error($conn);
 		else
-			echo "<script>alert('Account created!');</script>";
+			echo "<script>alert('Account created. Waiting for approval from the admin.');</script>";
 			echo '<META http-equiv="refresh" content="0;URL=index.php">';
 	
 
